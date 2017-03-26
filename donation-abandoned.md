@@ -93,11 +93,10 @@
     </div>
   </div>
   <div class="container">
-    <h2 class="text-center">Support freeCodeCamp's nonprofit community</h2>
+    <h2 class="text-center">You've abandoned your donation. We won't charge your credit card. You can come back and start donating any time.</h2>
     <div class="spacer"></div>
     <div class="row">
       <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 text-center">
-        <img class="img-responsive img-center" src="http://i.imgur.com/eA5qGV6.jpg">
         <h3></h3>
         <form action="//www.paypal.com/cgi-bin/webscr" method="post" onsubmit="ga('send', 'event', 'Donate', 'clicked', 'Freecodecamp donate 20 recurring');" target="_blank">
           <input name="cmd" type="hidden" value="_s-xclick"> <input name="hosted_button_id" type="hidden" value="C72UGKXK4786L"> <input class="btn btn-cta signup-btn btn-block" name="submit" type="submit" value='Start donating $20/month'> <img alt="" border="0" height="1" src="//www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1">
