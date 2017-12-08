@@ -1,0 +1,8 @@
+port: 8081
+stripe:
+  public: 'pk_test_ZihwxeE5pFQU7T1PAaZkgT1Y'
+  secret: 'sk_test_JAPqSGN1eM0x2K8rFQjto9CB'
+amazon:
+  merchant: AO68VLH42KXPL
+  public: amzn1.application-oa2-client.d86737d9bbe74f6f89b1c4754d5118d4
+  secret: 57a70b747b97f6409f46722a8b090d955ed6befaf5641c91080bf3d793d12d77

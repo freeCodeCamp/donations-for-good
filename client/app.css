@@ -1,0 +1,193 @@
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: url(/fonts/Source+Sans+Pro_400_normal.eot);
+    src: local('☺'),
+        url(/fonts/Source+Sans+Pro_400_normal.eot?#iefix) format('embedded-opentype'),
+        url(/fonts/Source+Sans+Pro_400_normal.woff) format('woff'),
+        url(/fonts/Source+Sans+Pro_400_normal.ttf) format('truetype'),
+        url(/fonts/Source+Sans+Pro_400_normal.svg#Source+Sans+Pro_400_normal) format('svg');
+}
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 700;
+    src: url(/fonts/Source+Sans+Pro_700_normal.eot);
+    src: local('☺'),
+        url(/fonts/Source+Sans+Pro_700_normal.eot?#iefix) format('embedded-opentype'),
+        url(/fonts/Source+Sans+Pro_700_normal.woff) format('woff'),
+        url(/fonts/Source+Sans+Pro_700_normal.ttf) format('truetype'),
+        url(/fonts/Source+Sans+Pro_700_normal.svg#Source+Sans+Pro_700_normal) format('svg');
+}
+/*
+  Dat color variables
+  TODO: Import from dat-colors (had bug couldn't figure out)
+*/
+:root {
+  --white:#FFFFFF;
+  --black:#293648;
+  --neutral:#293648;
+  --neutral-90:#394B5B;
+  --neutral-80:#505F6D;
+  --neutral-70:#65737F;
+  --neutral-60:#7C8792;
+  --neutral-50:#919BA4;
+  --neutral-40:#A7AFB6;
+  --neutral-30:#C3C9CD;
+  --neutral-20:#D3D7DB;
+  --neutral-14:#E0E3E5;
+  --neutral-10:#E9EBEC;
+  --neutral-04:#F6F7F8;
+  --green:#006400;
+  --green-hover:#008600;
+  --green-darker:#006607;
+  --green-disabled:#94E4A5;
+  --blue:#007FFF;
+  --blue-hover:#0066CC;
+  --blue-darker:#003E83;
+  --blue-disabled:#7FBFFF;
+  --mint:#159F84;
+  --mint-hover:#0B856D;
+  --mint-darker:#045943;
+  --mint-disabled:#8ACFC1;
+  --yellow:#F2CD02;
+  --yellow-hover:#C4A500;
+  --yellow-darker: #9F7D07;
+  --yellow-disabled: #FBF0B3;
+  --red: #D8524E;
+  --red-hover: #B33C38;
+  --red-darker: #A52724;
+  --red-disabled: #EBA8A6;
+  --pink: #F9A5E4;
+}
+
+body {
+  font-family: 'Source Sans Pro', 'PT Sans', 'Calibri', sans-serif;
+  font-size: 100%;
+  background-color: var(--white);
+  color: var(--neutral);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--green);
+}
+
+.b--neutral {
+  border-color: var(--neutral);
+}
+.b--green {
+  border-color: var(--green);
+}
+
+.bg--green {
+  background-color: var(--green);
+}
+
+.inv:hover {
+  color: var(--white);
+  background-color: var(--green-hover);
+}
+
+.inv:focus {
+  color: var(--white);
+  background-color: var(--green-hover);
+}
+
+.donate-button-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+}
+
+.donate-button-list-wrapper .value {
+  display: flex;
+  justify-content: center;
+}
+
+.donate-button-list-wrapper > ul > li {
+  width: calc(25% - 4px);
+  margin: 0 2px;
+}
+
+.donate-button-list-wrapper > ul {
+  display: flex;
+  justify-content: center;
+}
+.donate-button-list-wrapper .full-width {
+  width: 100%;
+}
+
+.donate-button-list-wrapper button {
+  background-color: var(--white);
+  font-family: inherit;
+}
+
+.donate-button-list-wrapper .active {
+  background-color: var(--green-hover);
+  color: var(--white);
+}
+.max-500 {
+  max-width: 500px;
+}
+
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+}
+.payment-methods > li {
+  height: 87px;
+}
+.payment-methods button {
+  height: 80px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.pay-button {
+  max-height: 50px;
+}
+.bitcoin-button {
+  display: flex;
+  flex-direction: column;
+}
+
+#modal {
+  background: orange;
+  position: fixed;
+  width: 70%;
+  top: 15%;
+  left: 15%;
+  height: 60%;
+  transform: scale(1.5);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dialogIsOpen #page-wrap {
+  filter: blur(8px) grayscale(50%);
+  transform: scale(0.9);
+}
+
+.dialogIsOpen #modal {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#page-wrap, #modal {
+  transition: all 0.4s ease;
+}
+
+#AmazonPayButton {
+  display: flex;
+  justify-content: center;
+}
+#addressBookWidgetDiv {
+  width: 400px;
+  height: 228px;
+}
+
+header > div > p {
+  font-size: 17px;
+}
