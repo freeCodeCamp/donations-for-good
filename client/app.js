@@ -68,6 +68,7 @@ function handleDonate(state, emitter) {
   });
   emitter.on('checkout-method', function(method) {
     state.donation.checkoutMethod = method;
+    emitter.emit('render');
   });
   emitter.on('checkout', function() {
     if (!state.donation.amount) {
