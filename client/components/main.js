@@ -8,7 +8,7 @@ function donateView(state, emit) {
       <header class="fn fl-ns w-70-l pr4-ns">
         <h1 class="f3 mb3 mt0 lh-title">${fccLogo()}</h1>
         <div class="fn fl-ns">
-          <h2>From freeCodeCamp founder Quincy Larson</h2>
+          <h2>From freeCodeCamp teacher Quincy Larson</h2>
           <hr>
           <p>freeCodeCamp is one of the biggest learning communities on the internet.</p>
           <p>Together, we've created thousands of videos, articles, and coding challenges you can learn from.</p>
@@ -19,7 +19,7 @@ function donateView(state, emit) {
           <p>Thanks,</p>
           <br>
           <p><strong>Quincy Larson</strong></p>
-          <p>freeCodeCamp Founder</p>
+          <p>Teacher at freeCodeCamp</p>
         </div>
       </header>
       <div class="fn fl-ns w-30-l">
