@@ -1,1 +1,1 @@
-## Our Communities DOnation Page
+## Our Communities Donation Page
