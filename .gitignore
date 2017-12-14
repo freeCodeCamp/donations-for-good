@@ -29,6 +29,5 @@ node_modules
 # ignore config file
 config.yml
 
-public/index.html
-public/bundle.*
+public
 .DS_Store
