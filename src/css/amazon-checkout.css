@@ -1,0 +1,50 @@
+@keyframes boing {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate {
+  animation: 0.5s linear 0.25s 5 boing;
+}
+
+#walletWidgetDiv {
+  height: 228px;
+  margin-bottom: 5px;
+}
+
+#consentWidgetDiv {
+  height: 140px;
+}
+
+#amazon-checkout {
+  margin: 10px 0;
+}
+
+#amazon-checkout > button {
+  background-color: #fff;
+  width: 100%;
+  cursor: pointer;
+}
+
+#payment-confirm:hover {
+  background-color: #006400;
+  color: #fff;
+}
+
+#payment-confirm:focus {
+  background-color: #006400;
+  color: #fff;
+}
