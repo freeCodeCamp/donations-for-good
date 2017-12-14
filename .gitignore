@@ -28,6 +28,6 @@ node_modules
 
 # ignore config file
 config.yml
-
+.cache
 public
 .DS_Store
