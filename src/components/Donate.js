@@ -123,6 +123,7 @@ class DonateView extends React.Component {
     const donateProcessed = pending || (success || error)
     return (
       <div>
+        <CustomDonation />
         <h5 className="f4 mv0 color-neutral-80">How much to donate monthly:</h5>
         <DonateAmounts
           donationAmount={amount}
@@ -153,5 +154,29 @@ class DonateView extends React.Component {
     )
   }
 }
+
+const CustomDonation = () => (
+  <form action="//www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+    <input type="hidden" name="cmd" value="_donations" />
+    <input type="hidden" name="business" value="FIXME - this needs to be the freeCodeCamp paypal email" />
+    <input type="hidden" name="item_name" value="Donation to FreeCodeCamp" />
+    <input type="hidden" name="currency_code" value="USD" />
+    <button
+      style={{
+        backgroundColor: "white",
+        border: "none",
+        cursor: "pointer",
+        textDecoration: "underline",
+        color: "blue",
+        padding: "0",
+        margin: "8px 0",
+      }}
+      name="submit"
+      type="submit"
+    >
+      Make a custom donation with PayPal
+    </button>
+  </form>
+);
 
 export default DonateView
