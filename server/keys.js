@@ -18,7 +18,13 @@ if (!keys.stripe.secret || !keys.stripe.public) {
   throw new Error('Stripe keys required');
 }
 
-if (!keys.amazon.merchant || !keys.amazon.public || !keys.amazon.secret || !keys.amazon.access || !keys.amazon.secretAccess) {
+if (
+  !keys.amazon.merchant ||
+  !keys.amazon.public ||
+  !keys.amazon.secret ||
+  !keys.amazon.access ||
+  !keys.amazon.secretAccess
+) {
   throw new Error('Amazon keys required');
 }
 
