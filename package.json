@@ -24,7 +24,7 @@
     "build": "gatsby build",
     "dev": "gatsby develop -p 8080",
     "dev-server": "nodemon server",
-    "format": "prettier --no-semi --write \"src/**/*.js\"",
+    "format": "prettier --single-quote es5 --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {

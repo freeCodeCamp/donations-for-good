@@ -1,18 +1,18 @@
-import React from "react"
-import Link from "gatsby-link"
-import ReactGA from "../googleAnalytics"
+import React from 'react';
+import Link from 'gatsby-link';
+import ReactGA from '../googleAnalytics';
 
-import fccLogo from "../../static/images/FreeCodeCamplogo.svg"
+import fccLogo from '../../static/images/FreeCodeCamplogo.svg';
 
 class DonationAbandoned extends React.Component {
   componentDidMount() {
-    ReactGA.pageview(window.location.pathname + window.location.search)
+    ReactGA.pageview(window.location.pathname + window.location.search);
     ReactGA.event({
-      category: "donation-outcome",
-      action: "callback-url",
-      label: "abandoned",
+      category: 'donation-outcome',
+      action: 'callback-url',
+      label: 'abandoned',
       nonInteraction: true
-    })
+    });
   }
   render() {
     return (
@@ -33,7 +33,7 @@ class DonationAbandoned extends React.Component {
             You've abandoned your donation.
           </h1>
           <h3 className="f4 mv0 color-neutral-80 tc">
-            We won't charge your credit card. You can come back and{" "}
+            We won't charge your credit card. You can come back and{' '}
             <Link to="/">start donating</Link>
             &nbsp;any time.
           </h3>
@@ -43,10 +43,10 @@ class DonationAbandoned extends React.Component {
           </h3>
         </div>
       </div>
-    )
+    );
   }
 }
 
-DonationAbandoned.displayName = "DonationAbandoned"
+DonationAbandoned.displayName = 'DonationAbandoned';
 
-export default DonationAbandoned
+export default DonationAbandoned;

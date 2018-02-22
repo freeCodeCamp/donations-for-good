@@ -1,12 +1,12 @@
-import React from "react"
-import ReactGA from "../googleAnalytics"
-import Donate from "../components/Donate"
-import fccLogo from "../../static/images/FreeCodeCamplogo.svg"
-import "../css/app.css"
+import React from 'react';
+import ReactGA from '../googleAnalytics';
+import Donate from '../components/Donate';
+import fccLogo from '../../static/images/FreeCodeCamplogo.svg';
+import '../css/app.css';
 
 class IndexPage extends React.Component {
   componentDidMount() {
-    ReactGA.pageview(window.location.pathname + window.location.search)
+    ReactGA.pageview(window.location.pathname + window.location.search);
   }
   render() {
     return (
@@ -71,8 +71,8 @@ class IndexPage extends React.Component {
           </p>
         </div>
       </article>
-    )
+    );
   }
 }
 
-export default IndexPage
+export default IndexPage;

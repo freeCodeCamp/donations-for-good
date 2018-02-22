@@ -1,18 +1,18 @@
-import React from "react"
-import Link from "gatsby-link"
-import ReactGA from "../googleAnalytics"
+import React from 'react';
+import Link from 'gatsby-link';
+import ReactGA from '../googleAnalytics';
 
-import fccLogo from "../../static/images/FreeCodeCamplogo.svg"
+import fccLogo from '../../static/images/FreeCodeCamplogo.svg';
 
 class DonationSuccessful extends React.Component {
   componentDidMount() {
-    ReactGA.pageview(window.location.pathname + window.location.search)
+    ReactGA.pageview(window.location.pathname + window.location.search);
     ReactGA.event({
-      category: "donation-outcome",
-      action: "callback-url",
-      label: "success",
+      category: 'donation-outcome',
+      action: 'callback-url',
+      label: 'success',
       nonInteraction: true
-    })
+    });
   }
   render() {
     return (
@@ -40,10 +40,10 @@ class DonationSuccessful extends React.Component {
           </h3>
         </div>
       </div>
-    )
+    );
   }
 }
 
-DonationSuccessful.displayName = "DonationSuccessful"
+DonationSuccessful.displayName = 'DonationSuccessful';
 
-export default DonationSuccessful
+export default DonationSuccessful;

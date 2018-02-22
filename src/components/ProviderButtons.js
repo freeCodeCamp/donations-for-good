@@ -1,18 +1,18 @@
-import React from "react"
-import ReactGA from "../googleAnalytics"
-import { paypalButtonValues } from "../clientCheckouts/paypal"
+import React from 'react';
+import ReactGA from '../googleAnalytics';
+import { paypalButtonValues } from '../clientCheckouts/paypal';
 
 // import AmazonPay from "../../static/images/payment-logos/Amazon-Pay-logo.png"
-import PayPal from "../../static/images/payment-logos/pp-logo-200px.png"
+import PayPal from '../../static/images/payment-logos/pp-logo-200px.png';
 
 class ProviderButtons extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     // react complains when these are not held in state
     this.state = {
       paypalButtonValues
-    }
-    this.handleClick = this.handleClick.bind(this)
+    };
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(e) {
@@ -21,25 +21,25 @@ class ProviderButtons extends React.Component {
       handleCheckout,
       isProduction,
       updateProvider
-    } = this.props
-    const { id } = e.target
-    const unsafeProvider = id.includes("-") ? id.split("-")[0] : id
-    const provider = /amazon/i.test(unsafeProvider) ? "amazon" : unsafeProvider
-    updateProvider(provider)
+    } = this.props;
+    const { id } = e.target;
+    const unsafeProvider = id.includes('-') ? id.split('-')[0] : id;
+    const provider = /amazon/i.test(unsafeProvider) ? 'amazon' : unsafeProvider;
+    updateProvider(provider);
     setTimeout(() => {
-      handleCheckout()
-    }, 0)
+      handleCheckout();
+    }, 0);
     ReactGA.event({
-      category: `${isProduction ? "" : "test-"}donation-provider`,
-      action: "click",
+      category: `${isProduction ? '' : 'test-'}donation-provider`,
+      action: 'click',
       label: id,
       value: donationAmount / 100
-    })
+    });
   }
 
   render() {
-    const { donationAmount } = this.props
-    const { paypalButtonValues } = this.state
+    const { donationAmount } = this.props;
+    const { paypalButtonValues } = this.state;
     return (
       <div className="donate-button-list-wrapper">
         <ul className="list pl0 mb0 payment-methods">
@@ -48,8 +48,8 @@ class ProviderButtons extends React.Component {
               onClick={this.handleClick}
               id="stripe"
               className={
-                "mt2 f6 f4-ns tc b dib pv3 ph3 link inv " +
-                "color-neutral-80 ba b--green full-width"
+                'mt2 f6 f4-ns tc b dib pv3 ph3 link inv ' +
+                'color-neutral-80 ba b--green full-width'
               }
             >
               Credit or Debit Card
@@ -69,8 +69,8 @@ class ProviderButtons extends React.Component {
               />
               <button
                 className={
-                  "mt2 f6 f4-ns tc b dib pv3 ph3 link inv " +
-                  "color-neutral-80 ba b--green full-width"
+                  'mt2 f6 f4-ns tc b dib pv3 ph3 link inv ' +
+                  'color-neutral-80 ba b--green full-width'
                 }
                 id="paypal-button"
                 name="submit"
@@ -88,13 +88,13 @@ class ProviderButtons extends React.Component {
           </li>
         </ul>
       </div>
-    )
+    );
   }
 }
 
-ProviderButtons.displayName = "ProviderButtons"
+ProviderButtons.displayName = 'ProviderButtons';
 
-export default ProviderButtons
+export default ProviderButtons;
 
 /* <li className="dib mr2 mb2 full-width">
   <button

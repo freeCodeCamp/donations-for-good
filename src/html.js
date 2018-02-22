@@ -1,32 +1,31 @@
-import React from "react"
+import React from 'react';
 import preloads from './head/preloads';
 import metaAndStyleSheets from './head';
 
-
-let stylesStr
-if (process.env.NODE_ENV === "production") {
+let stylesStr;
+if (process.env.NODE_ENV === 'production') {
   try {
-    stylesStr = require("!raw-loader!../public/styles.css")
+    stylesStr = require('!raw-loader!../public/styles.css');
   } catch (e) {
-    console.log(e)
+    console.log(e);
   }
 }
 
 class HTML extends React.Component {
   render() {
-    let css
-    if (process.env.NODE_ENV === "production") {
+    let css;
+    if (process.env.NODE_ENV === 'production') {
       css = (
         <style
           dangerouslySetInnerHTML={{ __html: stylesStr }}
           id="gatsby-inlined-css"
         />
-      )
+      );
     }
     // these props are comping from gatsby, we do not need to worry about them
     /* eslint-disable react/prop-types */
     const clientId =
-      "amzn1.application-oa2-client.b8925ec1200b4911bffc00d90e2d19f1"
+      'amzn1.application-oa2-client.b8925ec1200b4911bffc00d90e2d19f1';
     return (
       <html {...this.props.htmlAttributes}>
         <head>
@@ -44,7 +43,7 @@ class HTML extends React.Component {
           <div
             dangerouslySetInnerHTML={{ __html: this.props.body }}
             id="___gatsby"
-            key={"body"}
+            key={'body'}
           />
           <script async="async" src="https://checkout.stripe.com/checkout.js" />
           <script src="/js/onPageLoad.js" />
@@ -55,11 +54,11 @@ class HTML extends React.Component {
           {this.props.postBodyComponents}
         </body>
       </html>
-    )
+    );
     /* eslint-enable react/prop-types */
   }
 }
 
-HTML.displayName = "HTML"
+HTML.displayName = 'HTML';
 
-module.exports = HTML
+module.exports = HTML;

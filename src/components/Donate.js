@@ -1,31 +1,31 @@
-import React from "react"
-import DonateAmounts from "./DonateAmounts"
-import ProviderButtons from "./ProviderButtons"
-import DonateResults from "./DonateResults"
-import AmazonCheckout from "./AmazonCheckout"
+import React from 'react';
+import DonateAmounts from './DonateAmounts';
+import ProviderButtons from './ProviderButtons';
+import DonateResults from './DonateResults';
+import AmazonCheckout from './AmazonCheckout';
 
-import { loadStripeKey, stripeCheckout } from "../clientCheckouts/stripe"
-import { loadAmazonKey, renderAmazonElements } from "../clientCheckouts/amazon"
+import { loadStripeKey, stripeCheckout } from '../clientCheckouts/stripe';
+import { loadAmazonKey, renderAmazonElements } from '../clientCheckouts/amazon';
 
 const checkoutHandlers = {
   amazon: () => {},
   paypal: () => {},
   stripe: stripeCheckout
-}
+};
 
 class DonateView extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
-    this.handleCheckout = this.handleCheckout.bind(this)
-    this.updateAmount = this.updateAmount.bind(this)
-    this.updateCheckout = this.updateCheckout.bind(this)
-    this.updateProvider = this.updateProvider.bind(this)
+    this.handleCheckout = this.handleCheckout.bind(this);
+    this.updateAmount = this.updateAmount.bind(this);
+    this.updateCheckout = this.updateCheckout.bind(this);
+    this.updateProvider = this.updateProvider.bind(this);
 
     this.state = {
       checkout: {
         amazonAuthRequest: {},
-        amazonBillingAgreementId: "",
+        amazonBillingAgreementId: '',
         authorised: false,
         consentGiven: false,
         error: false,
@@ -37,23 +37,23 @@ class DonateView extends React.Component {
       isProduction: false,
       donation: {
         amount: 3500,
-        provider: ""
+        provider: ''
       },
       stripe: {},
       amazon: {}
-    }
+    };
   }
 
   componentDidMount() {
     loadStripeKey((err, key) => {
       if (err) {
-        console.log(err)
+        console.log(err);
       }
       this.setState(() => ({
         stripe: { key },
-        isProduction: !key.includes("_test_")
-      }))
-    })
+        isProduction: !key.includes('_test_')
+      }));
+    });
     // Commented out for release
     // loadAmazonKey((err, keys) => {
     //   if (err) {
@@ -75,18 +75,18 @@ class DonateView extends React.Component {
         pending: true,
         success: false
       }
-    }))
+    }));
     const {
       checkout,
       donation,
       isProduction,
       stripe: { key: stripeKey }
-    } = this.state
-    const { provider } = donation
+    } = this.state;
+    const { provider } = donation;
     const keys = {
       stripeKey
-    }
-    checkoutHandlers[provider]({ keys, checkout, donation, isProduction })
+    };
+    checkoutHandlers[provider]({ keys, checkout, donation, isProduction });
   }
 
   updateCheckout(key, value) {
@@ -95,7 +95,7 @@ class DonateView extends React.Component {
         ...state.checkout,
         [key]: value
       }
-    }))
+    }));
   }
 
   updateAmount(amount) {
@@ -104,7 +104,7 @@ class DonateView extends React.Component {
         ...state.donation,
         amount: parseInt(amount, 10)
       }
-    }))
+    }));
   }
 
   updateProvider(provider) {
@@ -113,14 +113,14 @@ class DonateView extends React.Component {
         ...state.donation,
         provider
       }
-    }))
+    }));
   }
 
   render() {
-    const { amazon, checkout, donation, isProduction } = this.state
-    const { amount } = donation
-    const { error, pending, success } = checkout
-    const donateProcessed = pending || (success || error)
+    const { amazon, checkout, donation, isProduction } = this.state;
+    const { amount } = donation;
+    const { error, pending, success } = checkout;
+    const donateProcessed = pending || (success || error);
     return (
       <div>
         <h5 className="f4 mv0 color-neutral-80">How much to donate monthly:</h5>
@@ -147,11 +147,11 @@ class DonateView extends React.Component {
         <AmazonCheckout
           checkout={checkout}
           amazonKeys={amazon}
-          shouldRender={donation.provider === "amazon" && checkout.authorised}
+          shouldRender={donation.provider === 'amazon' && checkout.authorised}
         />
       </div>
-    )
+    );
   }
 }
 
-export default DonateView
+export default DonateView;

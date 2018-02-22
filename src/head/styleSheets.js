@@ -1,6 +1,5 @@
 import React from 'react';
 
-const styleSheets = [
-];
+const styleSheets = [];
 
 export default styleSheets;
