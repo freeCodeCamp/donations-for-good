@@ -1,5 +1,5 @@
 export const paypalButtonValues = {
-  300: 'C72UGKXK4786L',
+  500: 'KTAXU8B4MYAT8',
   1000: 'BYEBQEHS5LHNC',
   3500: '57ZPMKJ8G893Y',
   5000: '2ZVYTHK6Q7AFW',
