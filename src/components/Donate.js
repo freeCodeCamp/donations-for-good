@@ -36,7 +36,7 @@ class DonateView extends React.Component {
       },
       isProduction: false,
       donation: {
-        amount: 3500,
+        amount: 500,
         provider: ''
       },
       stripe: {},

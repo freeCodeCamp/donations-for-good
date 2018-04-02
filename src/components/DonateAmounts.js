@@ -4,7 +4,7 @@ import ReactGA from '../googleAnalytics';
 class DonateAmounts extends React.Component {
   constructor(props) {
     super(props);
-    this.buttonAmounts = [300, 1000, 3500, 5000, 25000];
+    this.buttonAmounts = [500, 1000, 3500, 5000, 25000];
     this.handleClick = this.handleClick.bind(this);
     this.isActive = this.isActive.bind(this);
     this.renderButtons = this.renderButtons.bind(this);

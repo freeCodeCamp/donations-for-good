@@ -1,8 +1,11 @@
-port: 8080
+port: 7070
 stripe:
-  public: ''
-  secret: ''
+  public: test
+  secret: test
 amazon:
-  merchant: ''
-  client: ''
-  secret: ''
+  merchant: test
+  public: test
+  secret: test
+  access: test
+  secretAccess: test
+  devKey: test
