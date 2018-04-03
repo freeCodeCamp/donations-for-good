@@ -3,7 +3,7 @@ const keys = require('../keys');
 
 const stripe = Stripe(keys.stripe.secret);
 
-const subscriptionPlans = [300, 1000, 3500, 5000, 25000].reduce(
+const subscriptionPlans = [500, 1000, 3500, 5000, 25000].reduce(
   (accu, current) => ({
     ...accu,
     [current]: {
